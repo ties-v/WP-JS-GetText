@@ -20,7 +20,6 @@ function wp_js_gettext_enable($domains = 'default') {
     $jso_id = 'wp-js-i18n-' . implode('-', $domains);
     wp_enqueue_script($jso_id, add_query_arg('wp-js-gettext', implode(',', $domains), admin_url('index.php')), array(), $jso_id);
     wp_enqueue_script('wp-js-i18n', plugins_url('wp-js-gettext.js', __FILE__), array($jso_id, 'jquery'), '0.1');
-    //wp_localize_script('wp-js-i18n', 'i18n', array('href' => add_query_arg('wp-js-gettext', implode(',', $domains), admin_url('index.php'))));
 }
 
 /**
@@ -52,4 +51,4 @@ function wp_js_gettext_generate_translations() {
 add_action('init', 'wp_js_gettext_generate_translations');
 
 // Test it
-require_once 'test.php';
+require_once 'test/test.php';
